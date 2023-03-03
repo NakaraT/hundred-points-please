@@ -5,4 +5,5 @@
     <string name="button_name_home">Далее</string>
     <string name="todo">TODO</string>
     <string name="button_output_LOG">Вывод в LOG</string>
+    <string name="button_back">Назад</string>
 </resources>
