@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity{
 
     private static final String TAG = "geneticscalculator";
     public static final String KEY = "key";
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -21,16 +22,18 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra(KEY, "genetics");
-                startActivity(intent);
+                startActivityForResult(intent, 1);
+
             }
         });
     }
-
-    //public void onClick(View view) {
-    //    Intent intent = new Intent(this, SecondActivity.class);
-    //    startActivity(intent);
-    //}
-
+    protected void onActivityForResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data == null){
+            return;
+        }
+        String calc = data.getStringExtra("CALC");
+    }
     public void Click2(View view) {
         Log.i(TAG, "Вывод log по нажатию!");
     }

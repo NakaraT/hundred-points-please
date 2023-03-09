@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 
 public class SecondActivity extends AppCompatActivity{
     private static final String TAG = "SecondActivity";
+    public static final String CALC = "calculator";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +21,9 @@ public class SecondActivity extends AppCompatActivity{
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setResult(RESULT_CANCELED);
+                Intent intent = new Intent();
+                intent.putExtra(CALC, "calculator");
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });
