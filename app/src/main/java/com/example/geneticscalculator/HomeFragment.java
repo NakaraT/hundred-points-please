@@ -18,8 +18,19 @@ import com.example.geneticscalculator.databinding.FragmentMenuBinding;
 
 public class HomeFragment extends Fragment {
     private static final String TAG = "geneticscalculator";
+    public static final String KEY = "key";
     public HomeFragment() {
         super(R.layout.fragment_home);
+        HomeFragment homeFragment = new HomeFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY,"123");
+        homeFragment.setArguments(bundle);
+    }
+
+    public void onClick(View v) {
+        Bundle result = new Bundle();
+        result.putString("bundleKey", "result");
+        getParentFragmentManager().setFragmentResult("requestKey", result);
     }
 
     private FragmentHomeBinding binding;
