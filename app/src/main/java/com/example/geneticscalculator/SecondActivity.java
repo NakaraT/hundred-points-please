@@ -16,7 +16,6 @@ public class SecondActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        parseArgs();
         ImageButton imageButton = findViewById(R.id.buttonBack);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,10 +26,5 @@ public class SecondActivity extends AppCompatActivity{
                 finish();
             }
         });
-    }
-
-    private void parseArgs() {
-        String arg1 = getIntent().getStringExtra(MainActivity.KEY);
-        Log.d(TAG, arg1);
     }
 }

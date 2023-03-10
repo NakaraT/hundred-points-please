@@ -6,7 +6,8 @@
     <string name="todo">TODO</string>
     <string name="button_output_LOG">Вывод в LOG</string>
     <string name="button_back">Назад</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next_button">Далее</string>
+    <string name="menu_button">Меню</string>
 
 </resources>
