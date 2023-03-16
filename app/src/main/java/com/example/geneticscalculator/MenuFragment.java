@@ -1,30 +1,37 @@
 package com.example.geneticscalculator;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 
 import com.example.geneticscalculator.databinding.FragmentMenuBinding;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuFragment extends Fragment {
-    private static final String TAG = "geneticscalculator";
-    public static final String KEY = "key";
-
-    public MenuFragment() {
-        super(R.layout.fragment_menu);
-    }
     private FragmentMenuBinding binding;
 
-    public void getArgs() {
-        Bundle bundle = this.getArguments();
-        if (bundle != null){
-            String result = bundle.getString(KEY);
-        }
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding = FragmentMenuBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
-    public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
-        String result = bundle.getString("bundleKey");
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        List<RecycleItem> listItems = new ArrayList<>();
+        for (int i = 0; i < 200; i++) {
+            listItems.add(new RecycleItem(R.drawable.relative, String.valueOf(i+1)));
+        }
+        RecycleAdapter adapter = new RecycleAdapter(getContext(), listItems);
+        binding.recycleItem.setAdapter(adapter);
     }
 }
