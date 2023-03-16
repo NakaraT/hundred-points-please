@@ -17,10 +17,10 @@ import java.util.List;
 
 public class SecondFragment extends Fragment {
     private static final String TAG = "geneticscalculator";
+
     public SecondFragment() {
         super(R.layout.fragment_second);
     }
-
     private FragmentSecondBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,7 +36,6 @@ public class SecondFragment extends Fragment {
         ListAdapter adapter = new ListAdapter(getContext(), R.layout.item_list, listItems);
         binding.listItem.setAdapter(adapter);
         binding.buttonBack.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
                 requireActivity().getSupportFragmentManager().beginTransaction()
                         .addToBackStack(null)

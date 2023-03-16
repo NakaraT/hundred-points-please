@@ -33,5 +33,13 @@ public class MenuFragment extends Fragment {
         }
         RecycleAdapter adapter = new RecycleAdapter(getContext(), listItems);
         binding.recycleItem.setAdapter(adapter);
+        binding.buttonBack.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .addToBackStack(null)
+                        .replace(R.id.fragment_container, new HomeFragment())
+                        .commit();
+            }
+        });
     }
 }
