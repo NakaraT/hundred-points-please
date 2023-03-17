@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.geneticscalculator.databinding.FragmentMenuBinding;
 
@@ -36,10 +37,11 @@ public class MenuFragment extends Fragment {
         adapter.notifyDataSetChanged();
         binding.buttonBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.fragment_container, new HomeFragment())
-                        .commit();
+                Navigation.findNavController(view).navigate(R.id.action_menu_to_home);
+//                requireActivity().getSupportFragmentManager().beginTransaction()
+//                        .addToBackStack(null)
+//                        .replace(R.id.fragment_container, new HomeFragment())
+//                        .commit();
             }
         });
     }

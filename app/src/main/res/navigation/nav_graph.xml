@@ -23,6 +23,7 @@
         tools:layout="@layout/fragment_menu">
         <action
             android:id="@+id/action_menu_to_home"
+            app:popUpTo="@layout/fragment_home"
             app:destination="@+id/home"/>
     </fragment>
 
@@ -33,6 +34,7 @@
         tools:layout="@layout/fragment_second">
         <action
             android:id="@+id/action_second_to_home"
+            app:popUpTo="@layout/fragment_home"
             app:destination="@+id/home"/>
     </fragment>
 

@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.geneticscalculator.databinding.FragmentSecondBinding;
 
@@ -38,10 +39,11 @@ public class SecondFragment extends Fragment {
         binding.listItem.setAdapter(adapter);
         binding.buttonBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.fragment_container, new HomeFragment())
-                        .commit();
+                Navigation.findNavController(view).navigate(R.id.action_second_to_home);
+//                requireActivity().getSupportFragmentManager().beginTransaction()
+//                        .addToBackStack(null)
+//                        .replace(R.id.fragment_container, new HomeFragment())
+//                        .commit();
             }
         });
     }
