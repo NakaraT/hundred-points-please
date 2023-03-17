@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putString(TAG, KEY);
-                Navigation.findNavController(view).navigate(R.id.action_home_to_menu);
+                Navigation.findNavController(view).navigate(R.id.action_home_to_menu, bundle);
 //                requireActivity().getSupportFragmentManager().beginTransaction()
 //                        .addToBackStack(null)
 //                        .replace(R.id.fragment_container, new MenuFragment())
