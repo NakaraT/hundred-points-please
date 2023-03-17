@@ -18,6 +18,13 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
+    private static final String TAG = "geneticscalculator";
+    public static final String KEY = "key";
+
+    public HomeFragment() {
+        super(R.layout.fragment_home);
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -28,6 +35,8 @@ public class HomeFragment extends Fragment {
 
         binding.button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString(TAG, KEY);
                 Navigation.findNavController(view).navigate(R.id.action_home_to_menu);
 //                requireActivity().getSupportFragmentManager().beginTransaction()
 //                        .addToBackStack(null)

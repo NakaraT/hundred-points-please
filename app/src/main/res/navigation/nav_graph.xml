@@ -2,7 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home">
+
     <fragment
         android:id="@+id/home"
         android:name="com.example.geneticscalculator.HomeFragment"
@@ -18,7 +20,7 @@
 
     <fragment
         android:id="@+id/menu"
-        android:name="com.example.geneticscalculator.HomeFragment"
+        android:name="com.example.geneticscalculator.MenuFragment"
         android:label="Menu"
         tools:layout="@layout/fragment_menu">
         <action
@@ -29,7 +31,7 @@
 
     <fragment
         android:id="@+id/second"
-        android:name="com.example.geneticscalculator.HomeFragment"
+        android:name="com.example.geneticscalculator.SecondFragment"
         android:label="Second"
         tools:layout="@layout/fragment_second">
         <action
