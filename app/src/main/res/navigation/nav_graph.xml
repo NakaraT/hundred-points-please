@@ -19,8 +19,8 @@
     <fragment
         android:id="@+id/menu"
         android:name="com.example.geneticscalculator.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home">
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu">
         <action
             android:id="@+id/action_menu_to_home"
             app:destination="@+id/home"/>
@@ -29,8 +29,8 @@
     <fragment
         android:id="@+id/second"
         android:name="com.example.geneticscalculator.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home">
+        android:label="Second"
+        tools:layout="@layout/fragment_second">
         <action
             android:id="@+id/action_second_to_home"
             app:destination="@+id/home"/>
