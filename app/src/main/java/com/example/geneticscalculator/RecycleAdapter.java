@@ -24,21 +24,16 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         this.items = items;
     }
 
-    @NonNull
-    @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.item_list, parent,
-                false);
+        View view = inflater.inflate(R.layout.item_list, parent, false);
         return new ViewHolder(view);
     }
 
-    @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         RecycleItem item = items.get(position);
         holder.textView.setText(item.getRelativeTitle());
         holder.imageView.setImageResource(item.getResource());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Relative " + (holder.getAdapterPosition() + 1), Toast.LENGTH_SHORT).show();
                 Log.d("recyclerView", "Relative" + (holder.getAdapterPosition() + 1));
@@ -46,7 +41,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         });
     }
 
-    @Override
     public int getItemCount() {
         return items.size();
     }

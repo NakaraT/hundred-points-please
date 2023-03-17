@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,11 +17,11 @@ import java.util.List;
 
 
 public class SecondFragment extends Fragment {
-    private static final String TAG = "geneticscalculator";
 
     public SecondFragment() {
         super(R.layout.fragment_second);
     }
+
     private FragmentSecondBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
