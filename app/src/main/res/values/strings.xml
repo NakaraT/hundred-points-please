@@ -11,6 +11,8 @@
     <string name="menu_button">Меню</string>
     <string name="notification_title">Вывод уведомления</string>
     <string name="notification_text">Hello World!</string>
+    <string name="notification_title_2">Сервис запущен</string>
+    <string name="notification_text_2">Ооо, повезло, повезло</string>
     <string name="buttom_recycler_text">recycler</string>
     <string name="buttom_list_text">list</string>
     <string name="buttom_notification_text">notification</string>
