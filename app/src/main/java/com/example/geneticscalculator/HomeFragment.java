@@ -4,12 +4,16 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.Manifest;
+import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,7 +42,6 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        getActivity().startForegroundService(new Intent(getContext(), MyService.class));
         return binding.getRoot();
 
     }
@@ -74,6 +77,7 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel1 = new NotificationChannel(
@@ -83,6 +87,13 @@ public class HomeFragment extends Fragment {
             NotificationManager manager = (NotificationManager) getActivity().getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel1);
         }
+    }
+
+    public void onStop() {
+        getActivity().startForegroundService(new Intent(getContext(), MyService.class));
+//        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getActivity().getPackageName()));
+//        startActivityForResult(intent, 2);
+        super.onStop();
     }
 
     private void showNotification() {

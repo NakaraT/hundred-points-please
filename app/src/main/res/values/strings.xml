@@ -16,5 +16,6 @@
     <string name="buttom_recycler_text">recycler</string>
     <string name="buttom_list_text">list</string>
     <string name="buttom_notification_text">notification</string>
+    <string name="button_return">Вернуться в приложение</string>
 
 </resources>
