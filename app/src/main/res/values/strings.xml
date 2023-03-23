@@ -9,5 +9,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next_button">Далее</string>
     <string name="menu_button">Меню</string>
+    <string name="notification_title">Вывод уведомления</string>
+    <string name="notification_text">Hello World!</string>
+    <string name="buttom_recycler_text">recycler</string>
+    <string name="buttom_list_text">list</string>
+    <string name="buttom_notification_text">notification</string>
 
 </resources>

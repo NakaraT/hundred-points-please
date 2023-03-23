@@ -18,7 +18,6 @@ public class SecondActivity extends AppCompatActivity{
         setContentView(R.layout.activity_second);
         ImageButton imageButton = findViewById(R.id.buttonBack);
         imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.putExtra(CALC, "calculator");
