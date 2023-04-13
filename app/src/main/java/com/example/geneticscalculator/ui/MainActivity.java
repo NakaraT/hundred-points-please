@@ -1,8 +1,10 @@
-package com.example.geneticscalculator;
+package com.example.geneticscalculator.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.geneticscalculator.R;
 
 public class MainActivity extends AppCompatActivity{
 
