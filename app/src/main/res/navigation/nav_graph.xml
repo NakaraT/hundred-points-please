@@ -27,6 +27,10 @@
             android:id="@+id/action_menu_to_home"
             app:popUpTo="@layout/fragment_home"
             app:destination="@+id/home"/>
+        <action
+            android:id="@+id/action_menu_to_profile"
+            app:popUpTo="@layout/fragment_relativesprofile"
+            app:destination="@+id/profile"/>
     </fragment>
 
     <fragment
@@ -64,6 +68,17 @@
         <action
             android:id="@+id/action_signup_to_auth"
             app:destination="@+id/auth"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.geneticscalculator.ui.fragments.RelativesProfile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_relativesprofile">
+    <action
+        android:id="@+id/action_profile_to_home"
+        app:popUpTo="@layout/fragment_home"
+        app:destination="@+id/home"/>
     </fragment>
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.geneticscalculator.ui.stateholder;
+package com.example.geneticscalculator;
 
 import android.content.Context;
 import android.util.Log;

@@ -94,8 +94,8 @@ public class HomeFragment extends Fragment {
 
     public void onStop() {
         getActivity().startForegroundService(new Intent(getContext(), MyService.class));
-        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getActivity().getPackageName()));
-        startActivityForResult(intent, 2);
+//        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getActivity().getPackageName()));
+//        startActivityForResult(intent, 2);
         super.onStop();
     }
 

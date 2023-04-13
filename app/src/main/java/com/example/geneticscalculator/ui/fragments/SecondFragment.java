@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import com.example.geneticscalculator.ui.stateholder.ListAdapter;
+import com.example.geneticscalculator.ListAdapter;
 import com.example.geneticscalculator.ListItem;
 import com.example.geneticscalculator.R;
 import com.example.geneticscalculator.databinding.FragmentSecondBinding;
