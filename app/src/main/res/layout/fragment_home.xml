@@ -6,7 +6,7 @@
     android:id="@+id/fragment_menu_view"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment">
+    tools:context=".ui.fragments.HomeFragment">
 
     <TextView
         android:id="@+id/textView"

@@ -1,4 +1,4 @@
-package com.example.geneticscalculator;
+package com.example.geneticscalculator.ui.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.geneticscalculator.R;
+import com.example.geneticscalculator.RecycleAdapter;
+import com.example.geneticscalculator.RecycleItem;
 import com.example.geneticscalculator.databinding.FragmentMenuBinding;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.geneticscalculator;
+package com.example.geneticscalculator.ui.stateholder;
 
 import android.content.Context;
 import android.util.Log;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.geneticscalculator.ListItem;
+import com.example.geneticscalculator.R;
 
 import java.util.List;
 

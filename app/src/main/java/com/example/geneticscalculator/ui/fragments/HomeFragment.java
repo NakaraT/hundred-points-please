@@ -1,4 +1,4 @@
-package com.example.geneticscalculator;
+package com.example.geneticscalculator.ui.fragments;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -23,6 +23,8 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.geneticscalculator.MyService;
+import com.example.geneticscalculator.R;
 import com.example.geneticscalculator.databinding.FragmentHomeBinding;
 
 
@@ -49,6 +51,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         createNotificationChannel();
         super.onViewCreated(view, savedInstanceState);
+
         binding.button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
@@ -91,8 +94,8 @@ public class HomeFragment extends Fragment {
 
     public void onStop() {
         getActivity().startForegroundService(new Intent(getContext(), MyService.class));
-//        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getActivity().getPackageName()));
-//        startActivityForResult(intent, 2);
+        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getActivity().getPackageName()));
+        startActivityForResult(intent, 2);
         super.onStop();
     }
 

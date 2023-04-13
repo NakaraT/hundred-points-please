@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.example.geneticscalculator.HomeFragment"
+        android:name="com.example.geneticscalculator.ui.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/menu"
-        android:name="com.example.geneticscalculator.MenuFragment"
+        android:name="com.example.geneticscalculator.ui.fragments.MenuFragment"
         android:label="Menu"
         tools:layout="@layout/fragment_menu">
         <action
@@ -31,13 +31,39 @@
 
     <fragment
         android:id="@+id/second"
-        android:name="com.example.geneticscalculator.SecondFragment"
+        android:name="com.example.geneticscalculator.ui.fragments.SecondFragment"
         android:label="Second"
         tools:layout="@layout/fragment_second">
         <action
             android:id="@+id/action_second_to_home"
             app:popUpTo="@layout/fragment_home"
             app:destination="@+id/home"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/auth"
+        android:name="com.example.geneticscalculator.ui.fragments.AuthFragment"
+        android:label="Auth"
+        tools:layout="@layout/fragment_auth">
+        <action
+            android:id="@+id/action_auth_to_home"
+            app:popUpTo="@layout/fragment_home"
+            app:destination="@+id/home"/>
+
+        <action
+            android:id="@+id/action_auth_to_signup"
+            app:popUpTo="@layout/fragment_signup"
+            app:destination="@+id/signup"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.example.geneticscalculator.ui.fragments.SignUpFragment"
+        android:label="SignUp"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signup_to_auth"
+            app:destination="@+id/auth"/>
     </fragment>
 
 </navigation>
