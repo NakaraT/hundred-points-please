@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.geneticscalculator.R;
+import com.example.geneticscalculator.data.database.entity.RelativesEntity;
 import com.example.geneticscalculator.data.models.RelativesListItem;
 import com.example.geneticscalculator.databinding.FragmentRelativesprofileBinding;
 import com.example.geneticscalculator.ui.stateholder.viewModels.RelativesListItemViewModel;
@@ -34,14 +35,14 @@ public class RelativesProfile extends Fragment {
         viewModel = new ViewModelProvider(this).get(RelativesListItemViewModel.class);
         super.onViewCreated(view, savedInstanceState);
         parseArgs();
-        viewModel.relativesListItemLiveData.observe(getViewLifecycleOwner(), new Observer<RelativesListItem>() {
+        viewModel.relativesListItemLiveData.observe(getViewLifecycleOwner(), new Observer<RelativesEntity>() {
             @Override
-            public void onChanged(RelativesListItem profileSettingListItem) {
-                binding.relativesType.setText(RelativesListItem.getRelativesType());
-                binding.eyeColor.setText(RelativesListItem.getEyeColor());
-                binding.hairColor.setText(RelativesListItem.getHairColor());
-                binding.skinColor.setText(RelativesListItem.getSkinColor());
-                binding.bloodType.setText(RelativesListItem.getBloodType());
+            public void onChanged(RelativesEntity relativesEntity) {
+                binding.relativesType.setText(relativesEntity.getRelativesType());
+                binding.eyeColor.setText(relativesEntity.getEyeColor());
+                binding.hairColor.setText(relativesEntity.getHairColor());
+                binding.skinColor.setText(relativesEntity.getSkinColor());
+                binding.bloodType.setText(relativesEntity.getBloodType());
                 binding.relativeLogo.setImageResource(R.drawable.relative);
                 binding.buttonBack.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -15,6 +15,7 @@ import androidx.navigation.Navigation;
 
 import com.example.geneticscalculator.R;
 
+import com.example.geneticscalculator.data.database.entity.RelativesEntity;
 import com.example.geneticscalculator.data.models.RelativesListItem;
 import com.example.geneticscalculator.databinding.FragmentMenuBinding;
 import com.example.geneticscalculator.ui.stateholder.RelativesRecyclerAdapter;
@@ -45,11 +46,10 @@ public class MenuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         model = new ViewModelProvider(this).get(RelativesListViewModel.class);
         super.onViewCreated(view, savedInstanceState);
-        model.listLiveData.observe(getViewLifecycleOwner(), new Observer<List<RelativesListItem>>() {
+        model.listLiveData.observe(getViewLifecycleOwner(), new Observer<List<RelativesEntity>>() {
             @Override
-            public void onChanged(List<RelativesListItem> items) {
+            public void onChanged(List<RelativesEntity> items) {
                 RelativesRecyclerAdapter adapter = new RelativesRecyclerAdapter(items);
-                binding.recycleItem.setAdapter(adapter);
                 adapter.onRelativesListItemListener = new RelativesRecyclerAdapter.OnRelativesListClickListener() {
                     @Override
                     public void onRelativesItemListClickListener(int position) {
@@ -59,7 +59,7 @@ public class MenuFragment extends Fragment {
                     }
 
                 };
-
+                binding.recycleItem.setAdapter(adapter);
             }
         });
         binding.buttonBack.setOnClickListener(new View.OnClickListener() {

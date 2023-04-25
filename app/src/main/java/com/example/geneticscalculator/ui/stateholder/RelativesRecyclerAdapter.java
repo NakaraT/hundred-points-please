@@ -10,15 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.geneticscalculator.R;
+import com.example.geneticscalculator.data.database.entity.RelativesEntity;
 import com.example.geneticscalculator.data.models.RelativesListItem;
 
 import java.util.List;
 
 public class RelativesRecyclerAdapter extends RecyclerView.Adapter<RelativesRecyclerAdapter.RelativesViewHolder> {
     public OnRelativesListClickListener onRelativesListItemListener = null;
-    private List<RelativesListItem> items;
+    private List<RelativesEntity> items;
 
-    public RelativesRecyclerAdapter(List<RelativesListItem> items){
+    public RelativesRecyclerAdapter(List<RelativesEntity> items){
         this.items = items;
 
     }
@@ -34,12 +35,12 @@ public class RelativesRecyclerAdapter extends RecyclerView.Adapter<RelativesRecy
 
     @Override
     public void onBindViewHolder(@NonNull RelativesViewHolder holder, int position) {
-        RelativesListItem item = items.get(position);
-        holder.textView.setText(RelativesListItem.getRelativesType());
-        holder.textView2.setText(RelativesListItem.getEyeColor());
-        holder.textView3.setText(RelativesListItem.getHairColor());
-        holder.textView4.setText(RelativesListItem.getSkinColor());
-        holder.textView5.setText(RelativesListItem.getBloodType());
+        RelativesEntity item = items.get(position);
+        holder.textView.setText(item.getRelativesType());
+        holder.textView2.setText(item.getEyeColor());
+        holder.textView3.setText(item.getHairColor());
+        holder.textView4.setText(item.getSkinColor());
+        holder.textView5.setText(item.getBloodType());
         holder.imageView.setImageResource(R.drawable.relative);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

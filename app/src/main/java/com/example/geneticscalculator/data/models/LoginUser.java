@@ -1,16 +1,16 @@
 package com.example.geneticscalculator.data.models;
 
 public class LoginUser {
-    private final String login;
+    private final String number;
     private final String password;
 
     public LoginUser(String login, String password){
-        this.login = login;
+        this.number = login;
         this.password = password;
 
     }
-    public String getLogin() {
-        return login;
+    public String getNumber() {
+        return number;
     }
 
     public String getPassword() {

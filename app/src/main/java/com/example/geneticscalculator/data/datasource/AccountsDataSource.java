@@ -5,10 +5,12 @@ import com.example.geneticscalculator.data.models.LoginAdmin;
 public class AccountsDataSource {
 
     public boolean checkLoginUserValid(LoginUser loginUser){
-        return loginUser.getLogin().equals("") && loginUser.getPassword().equals("");
+        return loginUser.getNumber().equals("")
+                && loginUser.getPassword().equals("");
     }
 
     public boolean checkAdminUserValid(LoginAdmin loginAdministrator){
-        return loginAdministrator.getAdmlogin().equals("nakarat") && loginAdministrator.getPasskey().equals("");
+        return loginAdministrator.getAdmnumber().equals("79299084570")
+                && loginAdministrator.getPasskey().equals("");
     }
 }
