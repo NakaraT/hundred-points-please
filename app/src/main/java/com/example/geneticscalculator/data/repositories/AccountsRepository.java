@@ -1,16 +1,21 @@
 package com.example.geneticscalculator.data.repositories;
 
+import android.content.Context;
 import com.example.geneticscalculator.data.protocols.AccountsProtocol;
 import com.example.geneticscalculator.data.datasource.AccountsDataSource;
 import com.example.geneticscalculator.data.models.LoginAdmin;
 import com.example.geneticscalculator.data.models.LoginUser;
 
 public class AccountsRepository implements AccountsProtocol {
-    private final AccountsDataSource dataSource = new AccountsDataSource();
-
+    private final Context context;
+    private final AccountsDataSource dataSource;
+    public AccountsRepository(Context context){
+        this.context = context;
+        dataSource = new AccountsDataSource(context);
+    }
     @Override
-    public boolean adminLogin(LoginAdmin loginAdministrator) {
-        return dataSource.checkAdminUserValid(loginAdministrator);
+    public boolean adminLogin(LoginAdmin loginAdministrator, boolean allowed) {
+        return dataSource.checkAdminUserValid(loginAdministrator, allowed);
     }
 
     @Override

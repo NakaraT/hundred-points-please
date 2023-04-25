@@ -4,7 +4,7 @@ import com.example.geneticscalculator.data.models.LoginUser;
 
 public interface AccountsProtocol {
 
-    boolean adminLogin(LoginAdmin loginAdministrator);
+    boolean adminLogin(LoginAdmin loginAdmin, boolean allowed);
 
     boolean userLogin(LoginUser loginUser);
 

@@ -15,7 +15,7 @@ public interface RelativesProfilesDao {
     @Query("SELECT * FROM relatives_profiles_table")
     LiveData<List<RelativesEntity>> getRelativesList();
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(RelativesEntity doctorListItem);
+    void insert(RelativesEntity relativesEntity);
     @Query("SELECT * FROM relatives_profiles_table WHERE :id LIKE id")
     LiveData<RelativesEntity> getItem(int id);
 }
