@@ -14,8 +14,8 @@ public class AccountsRepository implements AccountsProtocol {
         dataSource = new AccountsDataSource(context);
     }
     @Override
-    public boolean adminLogin(LoginAdmin loginAdministrator, boolean allowed) {
-        return dataSource.checkAdminUserValid(loginAdministrator, allowed);
+    public boolean adminLogin(LoginAdmin loginAdmin, boolean allowed) {
+        return dataSource.checkAdminUserValid(loginAdmin, allowed);
     }
 
     @Override

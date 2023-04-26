@@ -30,10 +30,10 @@ public class AccountsDataSource {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        return !loginUser.getLogin().equals("") &&
-//                !loginUser.getPassword().equals("");
-        return loginUser.getNumber().equals("") &&
-                loginUser.getPassword().equals("");
+        return !loginUser.getNumber().equals("") &&
+                !loginUser.getPassword().equals("");
+//        return loginUser.getNumber().equals("") &&
+//                loginUser.getPassword().equals("");
     }
 
     public boolean checkAdminUserValid(LoginAdmin loginAdmin, boolean allowed){

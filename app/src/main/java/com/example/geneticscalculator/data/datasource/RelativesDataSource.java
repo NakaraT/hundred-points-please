@@ -66,24 +66,25 @@ public class RelativesDataSource {
                 "III"
 
         ));
-        MutableLiveData<List<RelativesEntity>> mutableLiveData = new MutableLiveData<>();
-        mutableLiveData.setValue(relatives);
+//        MutableLiveData<List<RelativesEntity>> mutableLiveData = new MutableLiveData<>();
+//        mutableLiveData.setValue(relatives);
 
-//        RelativesDataBase db = RelativesDataBase.getDatabase(context);
-//        RelativesProfilesDao RelativesDao = db.RelativesProfilesDao();
-//        Mapper mapper = new Mapper();
-//        db.getQueryExecutor().execute(() -> {
-//            for (RelativesEntity relatives : relatives) {
-//                RelativesDao.insert(relatives);
-//            }
-//        });
-//        List<RelativesEntity> listLiveData = RelativesDao.getRelativesList().getValue();
+        RelativesDataBase db = RelativesDataBase.getDatabase(context);
+        RelativesProfilesDao RelativesDao = db.RelativesProfilesDao();
+        Mapper mapper = new Mapper();
+        db.getQueryExecutor().execute(() -> {
+            for (RelativesEntity relatives : relatives) {
+                RelativesDao.insert(relatives);
+            }
+        });
+        LiveData<List<RelativesEntity>> listLiveData = RelativesDao.getRelativesList();
+
 //        MutableLiveData<List<RelativesEntity>> mutableLiveData = new MutableLiveData<>();
 //        if (listLiveData != null) {
 //            List<RelativesListItem> listLD = mapper.mapRelativesToRelativesListItem(listLiveData);
 //            mutableLiveData.setValue(relatives);
 //        }
-        return mutableLiveData;
+        return listLiveData;
     }
 
     public LiveData<RelativesEntity> getRelativesItem(int position) {
