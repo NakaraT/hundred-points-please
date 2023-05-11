@@ -1,19 +1,43 @@
 package com.example.geneticscalculator.data.datasource;
 
 import android.content.Context;
+
+import androidx.work.Data;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import com.example.geneticscalculator.data.models.LoginUser;
+
+import com.example.geneticscalculator.UserDataWorker;
 import com.example.geneticscalculator.data.models.LoginAdmin;
+import com.example.geneticscalculator.data.models.LoginUser;
 
 public class AccountsDataSource {
     private final Context context;
 
+    private final WorkManager workManager;
+
     public AccountsDataSource(Context context) {
         this.context = context;
+        workManager = WorkManager.getInstance(context);
+    }
+
+    private Data createInputData(String login){
+        Data.Builder Databuilder = new Data.Builder();
+        Databuilder.putString(UserDataWorker.KEY_LOG, login);
+        return Databuilder.build();
+    }
+
+    public boolean checkLoginUserValid(LoginUser loginUser){
+        OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(UserDataWorker.class)
+                .setInputData(createInputData(loginUser.getNumber())).build();
+        workManager.enqueue(workRequest);
+        return !loginUser.getNumber().equals("") &&
+                !loginUser.getPassword().equals("");
     }
 
     public boolean checkAdminUserValid(LoginAdmin loginAdmin, boolean allowed){

@@ -71,9 +71,12 @@ public class RelativesDataSource {
         RelativesDataBase db = RelativesDataBase.getDatabase(context);
         RelativesProfilesDao RelativesDao = db.RelativesProfilesDao();
         Mapper mapper = new Mapper();
-        db.getQueryExecutor().execute(() -> {
-            for (RelativesEntity relatives : relatives) {
-                RelativesDao.insert(relatives);
+        db.getQueryExecutor().execute(new Runnable(){
+            @Override
+            public void run(){
+                for (RelativesEntity relativesEntity:relatives){
+                    RelativesDao.insert(relativesEntity);
+                }
             }
         });
         LiveData<List<RelativesEntity>> listLiveData = RelativesDao.getRelativesList();
