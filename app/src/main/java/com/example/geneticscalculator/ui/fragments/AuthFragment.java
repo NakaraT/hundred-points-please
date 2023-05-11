@@ -4,7 +4,9 @@ import static androidx.core.content.PermissionChecker.checkSelfPermission;
 import android.content.Context;
 
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +50,15 @@ public class AuthFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         viewModel = new ViewModelProvider(this).get(AuthViewModel.class);
         super.onViewCreated(view, savedInstanceState);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) binding.imageView1.getDrawable();
+                AnimatedVectorDrawable drawable1 = (AnimatedVectorDrawable) binding.imageView2.getDrawable();
+                drawable.start();
+                drawable1.start();
+            }
+        }, 2000);
         allowedPermission();
         SharedPreferences sharedPrefRead =
                 requireActivity().getSharedPreferences("AuthFragment", Context.MODE_PRIVATE);
