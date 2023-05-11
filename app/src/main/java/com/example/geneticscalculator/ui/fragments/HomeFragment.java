@@ -79,6 +79,16 @@ public class HomeFragment extends Fragment {
                 showNotification();
             }
         });
+
+        binding.button4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent textIntent = new Intent(Intent.ACTION_SEND);
+                textIntent.setType("text/plain");
+                textIntent.putExtra(Intent.EXTRA_SUBJECT, "Relatives info:");
+                textIntent.putExtra(Intent.EXTRA_TEXT, "QWERTY");
+                requireActivity().startActivity(textIntent);
+            }
+        });
     }
 
     private void createNotificationChannel() {

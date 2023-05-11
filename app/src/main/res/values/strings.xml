@@ -17,5 +17,6 @@
     <string name="buttom_list_text">list</string>
     <string name="buttom_notification_text">notification</string>
     <string name="button_return">Вернуться в приложение</string>
+    <string name="buttom_share_text">share</string>
 
 </resources>

@@ -14,7 +14,6 @@ import com.example.geneticscalculator.data.models.RelativesListItem;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class RelativesDataSource {
     private final Context context;
     List<RelativesEntity> relatives = new ArrayList<>();
@@ -78,12 +77,6 @@ public class RelativesDataSource {
             }
         });
         LiveData<List<RelativesEntity>> listLiveData = RelativesDao.getRelativesList();
-
-//        MutableLiveData<List<RelativesEntity>> mutableLiveData = new MutableLiveData<>();
-//        if (listLiveData != null) {
-//            List<RelativesListItem> listLD = mapper.mapRelativesToRelativesListItem(listLiveData);
-//            mutableLiveData.setValue(relatives);
-//        }
         return listLiveData;
     }
 

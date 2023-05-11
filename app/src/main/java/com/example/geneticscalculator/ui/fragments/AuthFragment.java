@@ -1,12 +1,16 @@
 package com.example.geneticscalculator.ui.fragments;
 
+import static androidx.core.content.PermissionChecker.checkSelfPermission;
 import android.content.Context;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.PermissionChecker;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -20,6 +24,8 @@ import com.example.geneticscalculator.ui.stateholder.viewModels.AuthViewModel;
 public class AuthFragment extends Fragment {
     private FragmentAuthBinding binding;
     private static final String SHARED_PREF_NAME = "name";
+    public static final String KEYN = "numder";
+    public static final String KEYP = "password";
     private AuthViewModel viewModel;
     @Nullable
     @Override
@@ -27,13 +33,24 @@ public class AuthFragment extends Fragment {
         binding = FragmentAuthBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
-
+    private boolean allowedPermission() {
+        if (checkSelfPermission(requireContext(), android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                == PermissionChecker.PERMISSION_GRANTED) {
+            return true;
+        }
+        else {
+            ActivityCompat.requestPermissions(requireActivity(),
+                    new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            return false;
+        }
+    }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         viewModel = new ViewModelProvider(this).get(AuthViewModel.class);
         super.onViewCreated(view, savedInstanceState);
+        allowedPermission();
         SharedPreferences sharedPrefRead =
-                requireActivity().getPreferences(Context.MODE_PRIVATE);
+                requireActivity().getSharedPreferences("AuthFragment", Context.MODE_PRIVATE);
         String loginSP = sharedPrefRead.getString(SHARED_PREF_NAME, "");
         binding.editTextPhone.setText(loginSP);
 
@@ -41,7 +58,7 @@ public class AuthFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 SharedPreferences sharedPrefWrite =
-                        requireActivity().getPreferences(Context.MODE_PRIVATE);
+                        requireActivity().getSharedPreferences("AuthFragment", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPrefWrite.edit();
                 editor.putString(SHARED_PREF_NAME,
                         binding.editTextPhone.getText().toString());

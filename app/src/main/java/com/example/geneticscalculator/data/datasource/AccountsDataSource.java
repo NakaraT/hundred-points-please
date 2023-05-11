@@ -16,26 +16,6 @@ public class AccountsDataSource {
         this.context = context;
     }
 
-    public boolean checkLoginUserValid(LoginUser loginUser){
-        String filename = "Number";
-        String fileContents = loginUser.getNumber();
-        File dir = context.getFilesDir();
-        File file_phone = new File(dir, filename);
-        try {
-            FileOutputStream fos = new FileOutputStream(file_phone);
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(fos));
-            writer.write(fileContents);
-            writer.close();
-            fos.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return !loginUser.getNumber().equals("") &&
-                !loginUser.getPassword().equals("");
-//        return loginUser.getNumber().equals("") &&
-//                loginUser.getPassword().equals("");
-    }
-
     public boolean checkAdminUserValid(LoginAdmin loginAdmin, boolean allowed){
         if (allowed) {
             String filename = "Key";
@@ -47,7 +27,8 @@ public class AccountsDataSource {
                 writer.write(fileContents);
                 writer.close();
                 fos.close();
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }

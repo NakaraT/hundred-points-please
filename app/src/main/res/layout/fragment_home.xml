@@ -61,11 +61,21 @@
         android:id="@+id/button3"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="4dp"
         android:text="@string/buttom_notification_text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="64dp"
+        android:text="@string/buttom_share_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

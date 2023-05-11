@@ -62,6 +62,7 @@ public class MenuFragment extends Fragment {
                 binding.recycleItem.setAdapter(adapter);
             }
         });
+
         binding.buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
