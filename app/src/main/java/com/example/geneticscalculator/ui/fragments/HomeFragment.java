@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,15 +22,21 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.geneticscalculator.MyService;
 import com.example.geneticscalculator.R;
+import com.example.geneticscalculator.data.models.PlaceholderPost;
 import com.example.geneticscalculator.databinding.FragmentHomeBinding;
+import com.example.geneticscalculator.ui.stateholder.viewModels.HomeViewModel;
+
+import java.util.List;
 
 
 public class HomeFragment extends Fragment {
-
+    private HomeViewModel model;
     private FragmentHomeBinding binding;
 
     private static final String TAG = "geneticscalculator";
@@ -49,28 +56,40 @@ public class HomeFragment extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        model = new ViewModelProvider(this).get(HomeViewModel.class);
         createNotificationChannel();
         super.onViewCreated(view, savedInstanceState);
+        HomeViewModel.getPostLD().observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
+            @Override
+            public void onChanged(PlaceholderPost placeholderPost) {
+                Log.d("getBody", placeholderPost.getBody());
+            }
+        });
+        HomeViewModel.getPushLD().observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
+            @Override
+            public void onChanged(PlaceholderPost placeholderPost) {
+                binding.APIView.setText(placeholderPost.getTitle());
+                Log.d("getTitle", placeholderPost.getTitle());
+            }
+        });
+        HomeViewModel.getListLD().observe(getViewLifecycleOwner(), new Observer<List<PlaceholderPost>>() {
+            @Override
+            public void onChanged(List<PlaceholderPost> placeholderPosts) {
+                Log.d("getTitle(Posts)", placeholderPosts.get(50).getTitle());
+            }
+        });
 
         binding.button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putString(TAG, KEY);
                 Navigation.findNavController(view).navigate(R.id.action_home_to_menu, bundle);
-//                requireActivity().getSupportFragmentManager().beginTransaction()
-//                        .addToBackStack(null)
-//                        .replace(R.id.fragment_container, new MenuFragment())
-//                        .commit();
             }
         });
 
         binding.button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_home_to_second);
-//                requireActivity().getSupportFragmentManager().beginTransaction()
-//                        .addToBackStack(null)
-//                        .replace(R.id.fragment_container, new SecondFragment())
-//                        .commit();
             }
         });
 

@@ -65,9 +65,6 @@ public class RelativesDataSource {
                 "III"
 
         ));
-//        MutableLiveData<List<RelativesEntity>> mutableLiveData = new MutableLiveData<>();
-//        mutableLiveData.setValue(relatives);
-
         RelativesDataBase db = RelativesDataBase.getDatabase(context);
         RelativesProfilesDao RelativesDao = db.RelativesProfilesDao();
         Mapper mapper = new Mapper();

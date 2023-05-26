@@ -6,11 +6,17 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.geneticscalculator.data.database.entity.RelativesEntity;
+import com.example.geneticscalculator.data.models.PlaceholderPost;
 import com.example.geneticscalculator.data.repositories.RelativesRepository;
+import com.example.geneticscalculator.data.models.PlaceholderPost;
 
 import java.util.List;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeViewModel extends AndroidViewModel {
     private final RelativesRepository repository = new RelativesRepository(getApplication());
@@ -18,5 +24,66 @@ public class HomeViewModel extends AndroidViewModel {
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
+        repository.getPost().enqueue(new Callback<PlaceholderPost>() {
+            @Override
+            public void onResponse(Call<PlaceholderPost> call, Response<PlaceholderPost> response) {
+                if (response.isSuccessful()) {
+                    PlaceholderPost post = response.body();
+                    postLD.setValue(post);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PlaceholderPost> call, Throwable t) {
+
+            }
+        });
+
+        repository.pushPost(new PlaceholderPost(1, 1, "delectus aut autem", "false")).enqueue(new Callback<PlaceholderPost>() {
+            @Override
+            public void onResponse(Call<PlaceholderPost> call, Response<PlaceholderPost> response) {
+                if (response.isSuccessful()) {
+                    PlaceholderPost post = response.body();
+                    pushLD.setValue(post);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PlaceholderPost> call, Throwable t) {
+
+            }
+        });
+        repository.getAllPosts().enqueue(new Callback<List<PlaceholderPost>>() {
+            @Override
+            public void onResponse(Call<List<PlaceholderPost>> call, Response<List<PlaceholderPost>> response) {
+                if (response.isSuccessful()) {
+                    List<PlaceholderPost> post = response.body();
+                    getLD.setValue(post);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PlaceholderPost>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private static MutableLiveData<PlaceholderPost> postLD = new MutableLiveData<>();
+
+    public static LiveData<PlaceholderPost> getPostLD() {
+        return postLD;
+    }
+
+    private static MutableLiveData<PlaceholderPost> pushLD = new MutableLiveData<>();
+
+    public static LiveData<PlaceholderPost> getPushLD() {
+        return pushLD;
+    }
+
+    private static MutableLiveData<List<PlaceholderPost>> getLD = new MutableLiveData<>();
+
+    public static LiveData<List<PlaceholderPost>> getListLD() {
+        return getLD;
     }
 }
