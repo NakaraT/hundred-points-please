@@ -59,20 +59,20 @@ public class HomeFragment extends Fragment {
         model = new ViewModelProvider(this).get(HomeViewModel.class);
         createNotificationChannel();
         super.onViewCreated(view, savedInstanceState);
-        HomeViewModel.getPostLD().observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
+        model.postLD.observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
             @Override
             public void onChanged(PlaceholderPost placeholderPost) {
                 Log.d("getBody", placeholderPost.getBody());
             }
         });
-        HomeViewModel.getPushLD().observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
+        model.pushLD.observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
             @Override
             public void onChanged(PlaceholderPost placeholderPost) {
                 binding.APIView.setText(placeholderPost.getTitle());
                 Log.d("getTitle", placeholderPost.getTitle());
             }
         });
-        HomeViewModel.getListLD().observe(getViewLifecycleOwner(), new Observer<List<PlaceholderPost>>() {
+        model.getLD.observe(getViewLifecycleOwner(), new Observer<List<PlaceholderPost>>() {
             @Override
             public void onChanged(List<PlaceholderPost> placeholderPosts) {
                 Log.d("getTitle(Posts)", placeholderPosts.get(50).getTitle());

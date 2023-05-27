@@ -15,8 +15,8 @@ import retrofit2.http.POST;
 public interface RelativesProtocol {
     LiveData<List<RelativesEntity>> getRelativesList();
     LiveData<RelativesEntity> getRelativesItem(int position);
-    Call<PlaceholderPost> getPost();
-    Call<PlaceholderPost> pushPost(@Body PlaceholderPost post);
-    Call<List<PlaceholderPost>> getAllPosts();
+    LiveData<PlaceholderPost> getPost();
+    LiveData<PlaceholderPost> pushPost();
+    LiveData<List<PlaceholderPost>> getAllPosts();
 }
 
