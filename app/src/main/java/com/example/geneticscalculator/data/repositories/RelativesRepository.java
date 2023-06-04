@@ -11,7 +11,6 @@ import com.example.geneticscalculator.data.database.entity.RelativesEntity;
 import com.example.geneticscalculator.data.models.PlaceholderPost;
 import com.example.geneticscalculator.data.protocols.RelativesProtocol;
 import com.example.geneticscalculator.data.datasource.RelativesDataSource;
-import com.example.geneticscalculator.data.models.RelativesListItem;
 
 import java.util.List;
 

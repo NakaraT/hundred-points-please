@@ -5,19 +5,12 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.MutableLiveData;
-import android.app.Application;
 
 import com.example.geneticscalculator.data.database.entity.RelativesEntity;
 import com.example.geneticscalculator.data.models.PlaceholderPost;
 import com.example.geneticscalculator.data.repositories.RelativesRepository;
-import com.example.geneticscalculator.data.models.PlaceholderPost;
 
 import java.util.List;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class HomeViewModel extends AndroidViewModel {
     private final RelativesRepository repository = new RelativesRepository(getApplication());

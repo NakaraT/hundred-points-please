@@ -8,7 +8,6 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.geneticscalculator.data.database.entity.RelativesEntity;
-import com.example.geneticscalculator.data.models.RelativesListItem;
 
 import java.util.List;
 

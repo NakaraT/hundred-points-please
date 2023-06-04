@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.geneticscalculator.databinding.FragmentMenuBinding;
 import com.example.geneticscalculator.databinding.FragmentSignupBinding;
 
 public class SignUpFragment extends Fragment {

@@ -31,7 +31,8 @@
             android:id="@+id/editTextTextPassword"
             android:layout_width="250dp"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
             android:ems="10"
             android:hint="Пароль"
             android:inputType="textPassword"
@@ -40,23 +41,11 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="Подтвердите пароль"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
-
-        <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
             android:ems="10"
             android:hint="Номер телефона"
             android:inputType="phone"
@@ -81,13 +70,11 @@
             android:id="@+id/signUpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:backgroundTint="#FE66B8"
-            android:text="Зарегестироваться"
+            android:layout_marginTop="32dp"
+            android:text="Регистрация"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -8,7 +8,6 @@ import androidx.room.RoomDatabase;
 
 import com.example.geneticscalculator.data.database.dao.RelativesProfilesDao;
 import com.example.geneticscalculator.data.database.entity.RelativesEntity;
-import com.example.geneticscalculator.data.models.RelativesListItem;
 
 @Database(entities = {RelativesEntity.class}, version = 1, exportSchema = false)
 public abstract class RelativesDataBase extends RoomDatabase {

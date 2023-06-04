@@ -4,7 +4,6 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.ViewModel;
 
 import com.example.geneticscalculator.data.models.LoginUser;
 import com.example.geneticscalculator.data.repositories.AccountsRepository;
