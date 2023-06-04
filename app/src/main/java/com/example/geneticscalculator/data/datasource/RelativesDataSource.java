@@ -28,7 +28,7 @@ public class RelativesDataSource {
                 "Брюнет",
                 "Светлый",
                 "III"
-        ));
+                ));
         relatives.add(new RelativesEntity(
                 "Мама",
                 "Карий",
@@ -63,11 +63,9 @@ public class RelativesDataSource {
                 "Русый",
                 "Светлый",
                 "III"
-
         ));
         RelativesDataBase db = RelativesDataBase.getDatabase(context);
         RelativesProfilesDao RelativesDao = db.RelativesProfilesDao();
-        Mapper mapper = new Mapper();
         db.getQueryExecutor().execute(new Runnable(){
             @Override
             public void run(){
