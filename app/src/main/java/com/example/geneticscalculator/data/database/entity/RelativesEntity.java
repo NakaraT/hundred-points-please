@@ -1,33 +1,19 @@
 package com.example.geneticscalculator.data.database.entity;
 
-import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "relatives_profiles_table")
 public class RelativesEntity {
 
-    @PrimaryKey
-    @NonNull
-    @ColumnInfo(name = "id")
-    public String relativesType;
-    public String eyeColor;
-    public String hairColor;
-    public String skinColor;
-    public String bloodType;
+    @PrimaryKey(autoGenerate = true)
+    public int id;
 
-    public RelativesEntity(String relativesType, String eyeColor,
-                           String hairColor, String skinColor,
-                           String bloodType) {
-        this.relativesType = relativesType;
-        this.eyeColor = eyeColor;
-        this.hairColor = hairColor;
-        this.skinColor = skinColor;
-        this.bloodType = bloodType;
+    public int getId() {
+        return id;
     }
 
-    public  String getRelativesType() {
+    public String getRelativesType() {
         return relativesType;
     }
 
@@ -46,5 +32,11 @@ public class RelativesEntity {
     public String getBloodType() {
         return bloodType;
     }
+
+    public String relativesType = "";
+    public String eyeColor = "";
+    public String hairColor = "";
+    public String skinColor = "";
+    public String bloodType = "";
 }
 

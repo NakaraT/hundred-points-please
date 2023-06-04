@@ -21,14 +21,12 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 
 public class RelativesRepository implements RelativesProtocol {
+
     private final RelativesDataSource dataSource;
-    private final Context context;
 
     public RelativesRepository(Context context) {
-        this.context = context;
         dataSource = new RelativesDataSource(context);
     }
-
 
     @Override
     public LiveData<List<RelativesEntity>> getRelativesList() {
@@ -36,8 +34,30 @@ public class RelativesRepository implements RelativesProtocol {
     }
 
     @Override
-    public LiveData<RelativesEntity> getRelativesItem(int position) {
-        return dataSource.getRelativesItem(position);
+    public LiveData<RelativesEntity> getRelativesItem(int id) {
+        return dataSource.getRelativesItem(id);
+    }
+
+    @Override
+    public void addRelative() {
+        dataSource.addRelative();
+    }
+
+    @Override
+    public void deleteRelative(int id) {
+        dataSource.deleteRelative(id);
+    }
+
+    @Override
+    public void updateRelative(
+            int id,
+            String relativesType,
+            String eyeColor,
+            String hairColor,
+            String skinColor,
+            String bloodType
+    ) {
+        dataSource.updateRelative(id, relativesType, eyeColor, hairColor, skinColor, bloodType);
     }
 
     @Override

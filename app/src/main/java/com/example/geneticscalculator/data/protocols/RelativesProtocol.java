@@ -18,5 +18,15 @@ public interface RelativesProtocol {
     LiveData<PlaceholderPost> getPost();
     LiveData<PlaceholderPost> pushPost();
     LiveData<List<PlaceholderPost>> getAllPosts();
+    void addRelative();
+    void deleteRelative(int id);
+    void updateRelative(
+            int id,
+            String relativesType,
+            String eyeColor,
+            String hairColor,
+            String skinColor,
+            String bloodType
+    );
 }
 
