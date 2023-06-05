@@ -41,11 +41,11 @@ public class RelativesDataSource {
             String relativesType,
             String eyeColor,
             String hairColor,
-            String skinColor,
+            String dateofBirth,
             String bloodType
     ) {
         db.getQueryExecutor().execute(() ->
-                dao.update(id, relativesType, eyeColor, hairColor, skinColor, bloodType)
+                dao.update(id, relativesType, eyeColor, hairColor, dateofBirth, bloodType)
         );
     }
 }

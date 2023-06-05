@@ -20,7 +20,7 @@ public interface RelativesProtocol {
             String relativesType,
             String eyeColor,
             String hairColor,
-            String skinColor,
+            String dateofBirth,
             String bloodType
     );
 }

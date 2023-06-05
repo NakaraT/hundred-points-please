@@ -25,8 +25,8 @@ public class RelativesEntity {
         return hairColor;
     }
 
-    public String getSkinColor() {
-        return skinColor;
+    public String getDateofBirth() {
+        return dateofBirth;
     }
 
     public String getBloodType() {
@@ -36,7 +36,7 @@ public class RelativesEntity {
     public String relativesType = "";
     public String eyeColor = "";
     public String hairColor = "";
-    public String skinColor = "";
+    public String dateofBirth = "";
     public String bloodType = "";
 }
 

@@ -43,7 +43,7 @@
         tools:text="Цвет глаз" />
 
     <TextView
-        android:id="@+id/skinColor"
+        android:id="@+id/dateofBirth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -53,7 +53,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativesType"
-        tools:text="Цвет Кожи" />
+        tools:text="Дата рождения" />
 
     <TextView
         android:id="@+id/bloodType"
@@ -65,7 +65,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/skinColor"
+        app:layout_constraintTop_toBottomOf="@+id/dateofBirth"
         tools:text="Группа крови" />
 
     <TextView

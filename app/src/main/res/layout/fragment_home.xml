@@ -41,42 +41,44 @@
         android:id="@+id/button1"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/pink"
         android:text="@string/buttom_recycler_text"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/buttom_list_text"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
         android:text="@string/buttom_notification_text"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginTop="4dp"
         android:text="@string/buttom_share_text"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <TextView
         android:id="@+id/APIView"

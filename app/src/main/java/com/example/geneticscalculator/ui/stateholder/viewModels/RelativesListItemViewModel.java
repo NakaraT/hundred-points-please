@@ -31,9 +31,9 @@ public class RelativesListItemViewModel extends AndroidViewModel {
             String relativesType,
             String eyeColor,
             String hairColor,
-            String skinColor,
+            String dateofBirth,
             String bloodType
     ) {
-        repository.updateRelative(id, relativesType, eyeColor, hairColor, skinColor, bloodType);
+        repository.updateRelative(id, relativesType, eyeColor, hairColor, dateofBirth, bloodType);
     }
 }

@@ -4,16 +4,16 @@ public class RelativesListItem {
     private static String relativesType;
     private static String eyeColor;
     private static String hairColor;
-    private static String skinColor;
+    private static String dateofBirth;
     private static String bloodType;
 
     public RelativesListItem(String relativesType, String eyeColor,
-                             String hairColor, String skinColor,
+                             String hairColor, String dateofBirth,
                              String bloodType){
         this.relativesType = relativesType;
         this.eyeColor = eyeColor;
         this.hairColor = hairColor;
-        this.skinColor = skinColor;
+        this.dateofBirth = dateofBirth;
         this.bloodType = bloodType;
 
     }
@@ -30,8 +30,8 @@ public class RelativesListItem {
         return hairColor;
     }
 
-    public static String getSkinColor() {
-        return skinColor;
+    public static String getDateofBirth() {
+        return dateofBirth;
     }
 
     public static String getBloodType() {

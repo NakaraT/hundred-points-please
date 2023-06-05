@@ -38,7 +38,7 @@ public class RelativesProfile extends Fragment {
             binding.relativesType.setText(relativesEntity.getRelativesType());
             binding.eyeColor.setText(relativesEntity.getEyeColor());
             binding.hairColor.setText(relativesEntity.getHairColor());
-            binding.skinColor.setText(relativesEntity.getSkinColor());
+            binding.dateofBirth.setText(relativesEntity.getDateofBirth());
             binding.bloodType.setText(relativesEntity.getBloodType());
             binding.relativeLogo.setImageResource(R.drawable.relative);
         });
@@ -53,13 +53,12 @@ public class RelativesProfile extends Fragment {
                 binding.relativesType.getText().toString(),
                 binding.eyeColor.getText().toString(),
                 binding.hairColor.getText().toString(),
-                binding.skinColor.getText().toString(),
+                binding.dateofBirth.getText().toString(),
                 binding.bloodType.getText().toString()
         ));
 
         binding.buttonBack.setOnClickListener(view1 ->
-                // TODO profile_to_second
-                Navigation.findNavController(requireView()).navigate(R.id.action_profile_to_home)
+                Navigation.findNavController(requireView()).navigate(R.id.action_profile_to_menu)
         );
     }
 }

@@ -55,12 +55,13 @@
         app:layout_constraintTop_toBottomOf="@+id/hairColor" />
 
     <EditText
-        android:id="@+id/skinColor"
+        android:id="@+id/dateofBirth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:hint="Цвет Кожи"
+        android:hint="Дата рождения"
+        android:inputType="date"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -78,7 +79,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/skinColor"
+        app:layout_constraintTop_toBottomOf="@+id/dateofBirth"
         tools:ignore="TouchTargetSizeCheck" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

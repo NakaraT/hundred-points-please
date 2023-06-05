@@ -11,7 +11,7 @@ public class Mapper {
                 relatives.relativesType,
                 relatives.eyeColor,
                 relatives.hairColor,
-                relatives.skinColor,
+                relatives.dateofBirth,
                 relatives.bloodType
         );
         return relativesListItem;

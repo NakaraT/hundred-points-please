@@ -26,13 +26,13 @@ public interface RelativesProfilesDao {
     @Query("SELECT * FROM relatives_profiles_table WHERE :id = id")
     LiveData<RelativesEntity> getItem(int id);
 
-    @Query("UPDATE relatives_profiles_table SET relativesType = :relativesType, eyeColor = :eyeColor, hairColor = :hairColor, skinColor = :skinColor, bloodType = :bloodType WHERE id = :id")
+    @Query("UPDATE relatives_profiles_table SET relativesType = :relativesType, eyeColor = :eyeColor, hairColor = :hairColor, dateofBirth = :dateofBirth, bloodType = :bloodType WHERE id = :id")
     void update(
             int id,
             String relativesType,
             String eyeColor,
             String hairColor,
-            String skinColor,
+            String dateofBirth,
             String bloodType
     );
 }

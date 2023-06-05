@@ -53,10 +53,10 @@ public class RelativesRepository implements RelativesProtocol {
             String relativesType,
             String eyeColor,
             String hairColor,
-            String skinColor,
+            String dateofBirth,
             String bloodType
     ) {
-        dataSource.updateRelative(id, relativesType, eyeColor, hairColor, skinColor, bloodType);
+        dataSource.updateRelative(id, relativesType, eyeColor, hairColor, dateofBirth, bloodType);
     }
 
     @Override
