@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="geneticscalculator">dropDownMenuExample</string>
+    <string-array name="bloodTypes">
+        <item>l+</item>
+        <item>l-</item>
+        <item>ll+</item>
+        <item>ll-</item>
+        <item>lll+</item>
+        <item>lll-</item>
+        <item>llll+</item>
+        <item>llll-</item>
+    </string-array>
+</resources>

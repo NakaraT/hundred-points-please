@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.PermissionChecker;
@@ -50,15 +51,6 @@ public class AuthFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         viewModel = new ViewModelProvider(this).get(AuthViewModel.class);
         super.onViewCreated(view, savedInstanceState);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) binding.imageView1.getDrawable();
-                AnimatedVectorDrawable drawable1 = (AnimatedVectorDrawable) binding.imageView2.getDrawable();
-                drawable.start();
-                drawable1.start();
-            }
-        }, 2000);
         allowedPermission();
         SharedPreferences sharedPrefRead =
                 requireActivity().getSharedPreferences("AuthFragment", Context.MODE_PRIVATE);
@@ -75,10 +67,12 @@ public class AuthFragment extends Fragment {
                         binding.editTextPhone.getText().toString());
                 editor.apply();
 
-                if(viewModel.loginAccount(
+                if(!(viewModel.loginAccount(
                         binding.editTextPhone.getText().toString(),
                         binding.editTextTextPassword.getText().toString()
-                ))
+                )))
+                    Toast.makeText(getContext(), "Введите свои данные!", Toast.LENGTH_LONG).show();
+                else
                     Navigation.findNavController(view).navigate(R.id.action_auth_to_home);
 
             }

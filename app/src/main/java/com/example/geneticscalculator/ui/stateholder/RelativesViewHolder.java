@@ -23,9 +23,9 @@ public class RelativesViewHolder extends RecyclerView.ViewHolder {
         binding.getRoot().setOnClickListener(v -> onRelativesListItemListener.onClick(item.getId()));
         binding.relativeLogo.setImageResource(R.drawable.relative);
         binding.relativesType.setText(item.getRelativesType());
-        binding.eyeColor.setText(item.getEyeColor());
+//        binding.eyeColor.setText(item.getEyeColor());
         binding.dateofBirth.setText(item.getDateofBirth());
-        binding.bloodType.setText(item.getBloodType());
-        binding.hairColor.setText(item.getHairColor());
+//        binding.bloodType.setText(item.getBloodType());
+//        binding.hairColor.setText(item.getHairColor());
     }
 }

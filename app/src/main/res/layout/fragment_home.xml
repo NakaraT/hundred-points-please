@@ -12,13 +12,31 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/title_name"
-        android:textColor="@color/blue"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="casual"
+        android:text="Genetics"
+        android:textAppearance="@style/Theme.GeneticsCalculator"
+        android:textColor="@color/pink"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="128dp"
+        android:fontFamily="casual"
+        android:text="Calculator"
+        android:textAppearance="@style/Theme.GeneticsCalculator"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="TextContrastCheck" />
 
@@ -52,7 +70,7 @@
         android:id="@+id/button2"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/blue"
         android:text="@string/buttom_list_text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,33 +81,35 @@
         android:id="@+id/button3"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/buttom_notification_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button4"
-        android:layout_width="256dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_baseline_share_24"
         android:text="@string/buttom_share_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/APIView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="API"
         android:textColor="@color/blue"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

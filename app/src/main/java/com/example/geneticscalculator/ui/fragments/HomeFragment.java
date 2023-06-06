@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment {
                 Intent textIntent = new Intent(Intent.ACTION_SEND);
                 textIntent.setType("text/plain");
                 textIntent.putExtra(Intent.EXTRA_SUBJECT, "Relatives info:");
-                textIntent.putExtra(Intent.EXTRA_TEXT, "QWERTY");
+                textIntent.putExtra(Intent.EXTRA_TEXT, "Я нашёл классное приложение!\nGeneticsCalculator - его название");
                 requireActivity().startActivity(textIntent);
             }
         });
