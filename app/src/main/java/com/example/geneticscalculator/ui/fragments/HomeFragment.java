@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.Manifest;
@@ -26,6 +27,7 @@ import com.example.geneticscalculator.R;
 import com.example.geneticscalculator.data.models.PlaceholderPost;
 import com.example.geneticscalculator.databinding.FragmentHomeBinding;
 import com.example.geneticscalculator.ui.stateholder.viewModels.HomeViewModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
@@ -47,6 +49,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         return binding.getRoot();
+
 
     }
 
@@ -71,6 +74,25 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChanged(List<PlaceholderPost> placeholderPosts) {
                 Log.d("getTitle(Posts)", placeholderPosts.get(50).getTitle());
+            }
+        });
+
+        binding.bottomNavigation.setSelectedItemId(R.id.navigation_item1);
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_item1:
+                        return true;
+                    case R.id.navigation_item2:
+                        Navigation.findNavController(view).navigate(R.id.action_home_to_menu);
+                        return true;
+                    case R.id.navigation_item3:
+                        Navigation.findNavController(view).navigate(R.id.action_home_to_second);
+                        return true;
+                    default:
+                        return false;
+                }
             }
         });
 

@@ -7,17 +7,17 @@
     android:layout_margin="4dp">
 
     <ImageView
-        android:id="@+id/relativeLogo"
+        android:id="@+id/datesLogo"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/relative" />
+        tools:src="@drawable/ic_baseline_access_time_24" />
 
     <TextView
-        android:id="@+id/relativesType"
+        android:id="@+id/datesType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -25,22 +25,33 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/relativeLogo"
+        app:layout_constraintStart_toEndOf="@+id/datesLogo"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Родственник" />
+        tools:text="Тип идеи" />
 
     <TextView
-        android:id="@+id/dateofBirth"
+        android:id="@+id/datesInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/relativeLogo"
-        app:layout_constraintTop_toBottomOf="@+id/relativesType"
-        tools:text="Дата рождения" />
+        app:layout_constraintStart_toEndOf="@+id/datesText"
+        app:layout_constraintTop_toBottomOf="@+id/datesType"
+        tools:text="Времени осталось" />
 
+    <TextView
+        android:id="@+id/datesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/datesLogo"
+        app:layout_constraintTop_toBottomOf="@+id/datesType"
+        tools:text="Окончание:" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

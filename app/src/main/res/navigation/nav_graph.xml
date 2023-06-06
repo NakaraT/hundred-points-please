@@ -23,6 +23,9 @@
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in_right"
             app:popExitAnim="@anim/fade_out_left" />
+        <action
+            android:id="@+id/action_home_to_date"
+            app:destination="@id/date" />
     </fragment>
 
     <fragment
@@ -46,6 +49,14 @@
             app:popEnterAnim="@anim/fade_in_right"
             app:popExitAnim="@anim/fade_out_left"
             app:popUpTo="@layout/fragment_relativesprofile" />
+        <action
+            android:id="@+id/action_menu_to_second"
+            app:destination="@id/second"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in_right"
+            app:popExitAnim="@anim/fade_out_left"
+            app:popUpTo="@layout/fragment_second"/>
     </fragment>
 
     <fragment
@@ -53,6 +64,9 @@
         android:name="com.example.geneticscalculator.ui.fragments.SecondFragment"
         android:label="Second"
         tools:layout="@layout/fragment_second">
+        <argument
+            android:name="id"
+            app:argType="integer" />
         <action
             android:id="@+id/action_second_to_home"
             app:destination="@+id/home"
@@ -61,6 +75,22 @@
             app:popEnterAnim="@anim/fade_in_right"
             app:popExitAnim="@anim/fade_out_left"
             app:popUpTo="@layout/fragment_home" />
+        <action
+            android:id="@+id/action_second_to_menu"
+            app:destination="@id/menu"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in_right"
+            app:popExitAnim="@anim/fade_out_left"
+            app:popUpTo="@layout/fragment_menu"/>
+        <action
+            android:id="@+id/action_second_to_date"
+            app:destination="@id/date"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in_right"
+            app:popExitAnim="@anim/fade_out_left"
+            app:popUpTo="@layout/fragment_datesprofile"/>
     </fragment>
 
     <fragment
@@ -125,6 +155,25 @@
             app:popEnterAnim="@anim/fade_in_right"
             app:popExitAnim="@anim/fade_out_left"
             app:popUpTo="@layout/fragment_menu" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/date"
+        android:name="com.example.geneticscalculator.ui.fragments.DatesProfile"
+        android:label="Dates"
+        tools:layout="@layout/fragment_relativesprofile">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_date_to_second"
+            app:destination="@id/second"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in_right"
+            app:popExitAnim="@anim/fade_out_left"
+            app:popUpTo="@layout/fragment_second"/>
+
     </fragment>
 
 </navigation>
