@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,6 +57,21 @@ public class RelativesProfile extends Fragment {
                 binding.dateofBirth.getText().toString(),
                 binding.bloodType.getText().toString()
         ));
+        binding.update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                args.getId();
+                viewModel.updateRelative(
+                        args.getId(),
+                        binding.relativesType.getText().toString(),
+                        binding.eyeColor.getText().toString(),
+                        binding.hairColor.getText().toString(),
+                        binding.dateofBirth.getText().toString(),
+                        binding.bloodType.getText().toString()
+                );
+                Toast.makeText(getContext(), "Данные обновлены!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         binding.buttonBack.setOnClickListener(view1 ->
                 Navigation.findNavController(requireView()).navigate(R.id.action_profile_to_menu)

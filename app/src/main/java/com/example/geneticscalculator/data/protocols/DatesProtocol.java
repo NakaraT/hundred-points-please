@@ -17,10 +17,8 @@ public interface DatesProtocol {
     void deleteDates(int id);
     void updateDates(
             int id,
-            String relativesType,
-            String eyeColor,
-            String hairColor,
-            String dateofBirth,
-            String bloodType,
-            String year);
+            String datesType,
+            String datesInfo,
+            String datesText
+    );
 }

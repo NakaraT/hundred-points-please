@@ -7,9 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView.Adapter;
 
 import com.example.geneticscalculator.data.database.entity.DatesEntity;
-import com.example.geneticscalculator.data.database.entity.RelativesEntity;
 import com.example.geneticscalculator.databinding.ItemDatesBinding;
-import com.example.geneticscalculator.databinding.ItemRecycleBinding;
 
 import java.util.ArrayList;
 import java.util.List;

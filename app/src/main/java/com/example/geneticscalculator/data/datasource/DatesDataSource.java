@@ -40,13 +40,10 @@ public class DatesDataSource {
             int id,
             String datesType,
             String datesInfo,
-            String datesText,
-            String day,
-            String monthNumber,
-            String year
+            String datesText
     ) {
         db.getQueryExecutor().execute(() ->
-                dao.update(id, datesType, datesInfo, datesText, day, monthNumber, year)
+                dao.update(id, datesType, datesInfo, datesText)
         );
     }
 }

@@ -20,22 +20,13 @@ public class DatesEntity {
         return datesInfo;
     }
 
-    public String getDay() { return day; }
-
-    public String getMouthNumber() { return mouthNumber; }
-
-    public String getYear() { return year; }
-
     public String getDatesText() {
         return datesText;
     }
 
     public String datesType = "";
     public String datesInfo = "";
-    public String datesText = "Окончание:";
-    public String day = "";
-    public String mouthNumber = "";
-    public String year = "";
+    public String datesText = "";
 
 }
 

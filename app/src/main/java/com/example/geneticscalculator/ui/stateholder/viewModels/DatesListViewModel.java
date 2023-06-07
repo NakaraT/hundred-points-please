@@ -7,9 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.geneticscalculator.data.database.entity.DatesEntity;
-import com.example.geneticscalculator.data.database.entity.RelativesEntity;
 import com.example.geneticscalculator.data.repositories.DatesRepository;
-import com.example.geneticscalculator.data.repositories.RelativesRepository;
 
 import java.util.List;
 

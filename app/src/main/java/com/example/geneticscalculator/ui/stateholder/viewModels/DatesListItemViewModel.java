@@ -31,11 +31,7 @@ public class DatesListItemViewModel extends AndroidViewModel {
             int id,
             String datesType,
             String datesInfo,
-            String datesText,
-            String day,
-            String monthNumber,
-            String year
-    ) {
-        repository.updateDates(id, datesType, datesInfo, datesText, day, monthNumber, year);
+            String datesText) {
+        repository.updateDates(id, datesType, datesInfo, datesText);
     }
 }

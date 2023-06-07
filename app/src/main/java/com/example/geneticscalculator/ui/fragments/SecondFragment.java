@@ -41,15 +41,13 @@ public class SecondFragment extends Fragment {
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
-    public SecondFragment() {
-        super(R.layout.fragment_second);
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         model = new ViewModelProvider(this).get(DatesListViewModel.class);
         adapter = new DatesRecyclerAdapter(this::openProfile);
+
         binding.recycleItem.setAdapter(adapter);
         model.listLiveData.observe(getViewLifecycleOwner(), adapter::setItems);
         binding.add.setOnClickListener(v -> model.addDates());

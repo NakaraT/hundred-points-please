@@ -17,7 +17,7 @@ public interface DatesProfilesDao {
     LiveData<List<DatesEntity>> getDatesList();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(DatesEntity relativesEntity);
+    void insert(DatesEntity datesEntity);
 
     @Query("DELETE FROM dates_profiles_table WHERE :id = id")
     void delete(int id);
@@ -26,15 +26,11 @@ public interface DatesProfilesDao {
     LiveData<DatesEntity> getItem(int id);
 
     @Query("UPDATE dates_profiles_table SET datesType = :datesType," +
-            "datesInfo = :datesInfo, datesText = :datesType, day = :day, mouthNumber = :monthNumber," +
-            "year = :year  WHERE id = :id")
+            "datesInfo = :datesInfo, datesText = :datesText WHERE id = :id")
     void update(
             int id,
             String datesType,
             String datesInfo,
-            String datesText,
-            String day,
-            String monthNumber,
-            String year
+            String datesText
     );
 }

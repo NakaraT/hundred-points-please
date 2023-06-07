@@ -13,7 +13,6 @@ public class SecondActivity extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
         ImageButton imageButton = findViewById(R.id.buttonBack);
         imageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

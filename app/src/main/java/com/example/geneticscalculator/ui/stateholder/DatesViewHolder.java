@@ -23,9 +23,7 @@ public class DatesViewHolder extends RecyclerView.ViewHolder {
         binding.getRoot().setOnClickListener(v -> onDatesListItemListener.onClick(item.getId()));
         binding.datesLogo.setImageResource(R.drawable.ic_baseline_access_time_24);
         binding.datesType.setText(item.getDatesType());
-//        binding.eyeColor.setText(item.getEyeColor());
-        binding.datesInfo.setText(item.getDatesInfo());
         binding.datesText.setText(item.getDatesText());
-//        binding.hairColor.setText(item.getHairColor());
+        binding.datesInfo.setText(item.getDatesInfo());
     }
 }

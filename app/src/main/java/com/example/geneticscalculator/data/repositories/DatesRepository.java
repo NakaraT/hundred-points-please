@@ -53,13 +53,12 @@ public class DatesRepository implements DatesProtocol {
             int id,
             String datesType,
             String datesInfo,
-            String datesText,
-            String day,
-            String monthNumber,
-            String year
+            String datesText
     ) {
-        dataSource.updateDates(id, datesType, datesInfo, datesText, day, monthNumber, year);
+        dataSource.updateDates(id, datesType, datesInfo, datesText);
     }
+
+
     @Override
     public LiveData<PlaceholderPost> getPost() {
         Retrofit retrofit = RetrofitFactory.getRetrofit();
