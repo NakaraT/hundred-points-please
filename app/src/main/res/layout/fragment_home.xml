@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="casual"
         android:text="Genetics"
         android:textAppearance="@style/Theme.GeneticsCalculator"
@@ -53,37 +53,15 @@
         tools:ignore="ImageContrastCheck" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="256dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/pink"
-        android:text="@string/buttom_recycler_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <Button
         android:id="@+id/button2"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="48dp"
         android:backgroundTint="@color/blue"
-        android:text="Дата"
+        android:text="посчитать вероятность"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="256dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/buttom_notification_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageButton
         android:id="@+id/button4"
@@ -101,13 +79,13 @@
         android:id="@+id/APIView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:text="API"
         android:textColor="@color/blue"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

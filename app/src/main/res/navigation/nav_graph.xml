@@ -24,8 +24,12 @@
             app:popEnterAnim="@anim/fade_in_right"
             app:popExitAnim="@anim/fade_out_left" />
         <action
-            android:id="@+id/action_home_to_date"
-            app:destination="@id/date" />
+            android:id="@+id/action_home_to_genetics"
+            app:destination="@id/genetics"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in_right"
+            app:popExitAnim="@anim/fade_out_left"/>
     </fragment>
 
     <fragment
@@ -57,6 +61,9 @@
             app:popEnterAnim="@anim/fade_in_right"
             app:popExitAnim="@anim/fade_out_left"
             app:popUpTo="@layout/fragment_second"/>
+        <action
+            android:id="@+id/action_menu_self"
+            app:destination="@id/menu" />
     </fragment>
 
     <fragment
@@ -170,6 +177,22 @@
             app:popEnterAnim="@anim/fade_in_right"
             app:popExitAnim="@anim/fade_out_left"
             app:popUpTo="@layout/fragment_second"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/genetics"
+        android:name="com.example.geneticscalculator.ui.fragments.GeneticsFragment"
+        android:label="Genetics"
+        tools:layout="@layout/fragment_genetics">
+        <action
+            android:id="@+id/action_genetics_to_home"
+            app:destination="@id/home"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in_right"
+            app:popExitAnim="@anim/fade_out_left"/>
+
 
     </fragment>
 

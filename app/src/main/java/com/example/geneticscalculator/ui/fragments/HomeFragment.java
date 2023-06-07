@@ -96,25 +96,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        binding.button1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString(TAG, KEY);
-                Navigation.findNavController(view).navigate(R.id.action_home_to_menu, bundle);
-            }
-        });
-
         binding.button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_home_to_second);
+                Navigation.findNavController(view).navigate(R.id.action_home_to_genetics);
             }
         });
 
-        binding.button3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                showNotification();
-            }
-        });
 
         binding.button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

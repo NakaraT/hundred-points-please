@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="geneticscalculator">dropDownMenuExample</string>
+    <string name="geneticscalculator" translatable="false">dropDownMenuExample</string>
     <string-array name="bloodTypes">
         <item>l+</item>
         <item>l-</item>

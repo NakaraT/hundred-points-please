@@ -1,22 +1,70 @@
 <resources>
-    <string name="app_name">Genetics Calculator</string>
-    <string name="FIO">Тараканов Вячеслав Сергеевич</string>
-    <string name="title_name">GeneticsCalculator</string>
-    <string name="button_name_home">Далее</string>
-    <string name="todo">TODO</string>
-    <string name="button_output_LOG">Вывод в LOG</string>
-    <string name="button_back">Назад</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="next_button">Далее</string>
-    <string name="menu_button">Меню</string>
-    <string name="notification_title">Вывод уведомления</string>
-    <string name="notification_text">Hello World!</string>
-    <string name="notification_title_2">Сервис запущен</string>
-    <string name="notification_text_2">Ооо, повезло, повезло</string>
-    <string name="buttom_recycler_text">Информация</string>
-    <string name="buttom_list_text">list</string>
-    <string name="buttom_notification_text">notification</string>
-    <string name="button_return">Вернуться в приложение</string>
-    <string name="buttom_share_text">share</string>
+    <string name="app_name" translatable="false">Genetics Calculator</string>
+    <string name="FIO" translatable="false">Тараканов Вячеслав Сергеевич</string>
+    <string name="title_name" translatable="false">GeneticsCalculator</string>
+    <string name="button_name_home" translatable="false">Далее</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="button_output_LOG" translatable="false">Вывод в LOG</string>
+    <string name="button_back" translatable="false">Назад</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="next_button" translatable="false">Далее</string>
+    <string name="menu_button" translatable="false">Меню</string>
+    <string name="notification_title" translatable="false">Вывод уведомления</string>
+    <string name="notification_text" translatable="false">Hello World!</string>
+    <string name="notification_title_2" translatable="false">Сервис запущен</string>
+    <string name="notification_text_2" translatable="false">Ооо, повезло, повезло</string>
+    <string name="buttom_recycler_text" translatable="false">Информация</string>
+    <string name="buttom_list_text" translatable="false">list</string>
+    <string name="buttom_notification_text" translatable="false">notification</string>
+    <string name="button_return" translatable="false">Вернуться в приложение</string>
+    <string name="buttom_share_text" translatable="false">share</string>
+    <string name="prompt_1_2" translatable="false">1</string>
+    <string name="prompt_1_3" translatable="false">2</string>
+    <string name="prompt_2_1" translatable="false">3</string>
+    <string name="prompt_2_3" translatable="false">4</string>
+    <string name="prompt_3_1" translatable="false">5</string>
+    <string name="prompt_3_2" translatable="false">6</string>
+
+    <string-array name="values_1_2">
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+    </string-array>
+
+    <string-array name="values_1_3">
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+        <item>2.4</item>
+    </string-array>
+
+    <string-array name="values_2_1">
+        <item>3.1</item>
+        <item>3.2</item>
+        <item>3.3</item>
+        <item>3.4</item>
+    </string-array>
+
+    <string-array name="values_2_3">
+        <item>4.1</item>
+        <item>4.2</item>
+        <item>4.3</item>
+        <item>4.4</item>
+    </string-array>
+
+    <string-array name="values_3_1">
+        <item>5.1</item>
+        <item>5.2</item>
+        <item>5.3</item>
+        <item>5.4</item>
+    </string-array>
+
+    <string-array name="values_3_2">
+        <item>6.1</item>
+        <item>6.2</item>
+        <item>6.3</item>
+        <item>6.4</item>
+    </string-array>
 
 </resources>

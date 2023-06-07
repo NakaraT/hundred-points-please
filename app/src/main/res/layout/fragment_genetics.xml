@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/chance1_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:text="Вероятность передачи\nдоминантного гена:"
+        android:textColor="@color/pink"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+
+
+    <TextView
+        android:id="@+id/chance1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="74dp"
+        android:text="TextView"
+        android:textColor="@color/pink"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/chance1_text"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="A - Доминантный ген\na - Рецессивный ген"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/chance2_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Вероятность передачи\nрецессивного гена:"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chance1_text" />
+
+    <TextView
+        android:id="@+id/chance2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="42dp"
+        android:text="TextView"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/chance2_text"
+        app:layout_constraintTop_toBottomOf="@+id/chance1_text" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        tools:ignore="ImageContrastCheck"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gc_logo" />
+
+    <!-- Таблица -->
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text">
+
+        <!-- Заголовок таблицы -->
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="A/a"
+                android:textAlignment="center" />
+
+            <Spinner
+                android:id="@+id/spinner_1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:entries="@array/values_1_2"
+                android:prompt="@string/prompt_1_2" />
+
+            <Spinner
+                android:id="@+id/spinner_1_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:entries="@array/values_1_3"
+                android:prompt="@string/prompt_1_3" />
+        </TableRow>
+
+        <!-- Строка 2 -->
+        <TableRow>
+
+            <Spinner
+                android:id="@+id/spinner_2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/values_2_1"
+                android:prompt="@string/prompt_2_1" />
+
+            <TextView
+                android:id="@+id/cell1"
+                android:layout_column="2"
+                android:text="Значение 22"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/cell2"
+                android:layout_column="3"
+                android:text="Значение 23"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <!-- Строка 3 -->
+        <TableRow>
+
+            <Spinner
+                android:id="@+id/spinner_3_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/values_3_1"
+                android:prompt="@string/prompt_3_1" />
+
+            <TextView
+                android:id="@+id/cell3"
+                android:layout_column="2"
+                android:text="Значение 32"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/cell4"
+                android:layout_column="3"
+                android:text="Значение 33"
+                android:textAlignment="center" />
+        </TableRow>
+
+    </TableLayout>
+
+    <!-- Кнопка для отправки данных -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="192dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/blue"
+            android:src="@drawable/ic_baseline_home_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
