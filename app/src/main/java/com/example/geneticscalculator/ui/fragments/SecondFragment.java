@@ -14,19 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.example.geneticscalculator.ListAdapter;
-import com.example.geneticscalculator.ListItem;
 import com.example.geneticscalculator.R;
-import com.example.geneticscalculator.databinding.FragmentMenuBinding;
 import com.example.geneticscalculator.databinding.FragmentSecondBinding;
-import com.example.geneticscalculator.ui.stateholder.DatesRecyclerAdapter;
-import com.example.geneticscalculator.ui.stateholder.RelativesRecyclerAdapter;
+import com.example.geneticscalculator.ui.stateholder.adapters.DatesRecyclerAdapter;
 import com.example.geneticscalculator.ui.stateholder.viewModels.DatesListViewModel;
-import com.example.geneticscalculator.ui.stateholder.viewModels.RelativesListViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class SecondFragment extends Fragment {

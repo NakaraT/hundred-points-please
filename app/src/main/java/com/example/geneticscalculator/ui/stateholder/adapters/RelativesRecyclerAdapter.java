@@ -1,4 +1,4 @@
-package com.example.geneticscalculator.ui.stateholder;
+package com.example.geneticscalculator.ui.stateholder.adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView.Adapter;
 
 import com.example.geneticscalculator.data.database.entity.RelativesEntity;
 import com.example.geneticscalculator.databinding.ItemRecycleBinding;
+import com.example.geneticscalculator.ui.stateholder.OnRelativesListClickListener;
+import com.example.geneticscalculator.ui.stateholder.RelativesViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -61,9 +61,6 @@
             app:popEnterAnim="@anim/fade_in_right"
             app:popExitAnim="@anim/fade_out_left"
             app:popUpTo="@layout/fragment_second"/>
-        <action
-            android:id="@+id/action_menu_self"
-            app:destination="@id/menu" />
     </fragment>
 
     <fragment
@@ -143,14 +140,6 @@
         <argument
             android:name="id"
             app:argType="integer" />
-        <action
-            android:id="@+id/action_profile_to_home"
-            app:destination="@+id/home"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/fade_in_right"
-            app:popExitAnim="@anim/fade_out_left"
-            app:popUpTo="@layout/fragment_home" />
         <action
             android:id="@+id/action_profile_to_menu"
             app:destination="@id/menu"

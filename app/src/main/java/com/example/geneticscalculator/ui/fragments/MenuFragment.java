@@ -16,7 +16,7 @@ import androidx.navigation.Navigation;
 
 import com.example.geneticscalculator.R;
 import com.example.geneticscalculator.databinding.FragmentMenuBinding;
-import com.example.geneticscalculator.ui.stateholder.RelativesRecyclerAdapter;
+import com.example.geneticscalculator.ui.stateholder.adapters.RelativesRecyclerAdapter;
 import com.example.geneticscalculator.ui.stateholder.viewModels.RelativesListViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
