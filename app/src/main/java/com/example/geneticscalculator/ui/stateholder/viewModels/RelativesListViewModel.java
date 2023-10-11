@@ -17,6 +17,7 @@ public class RelativesListViewModel extends AndroidViewModel {
     public LiveData<List<RelativesEntity>> listLiveData = repository.getRelativesList();
 
     public RelativesListViewModel(@NonNull Application application) {
+
         super(application);
     }
 

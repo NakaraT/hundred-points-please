@@ -13,6 +13,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.geneticscalculator.R;
+import com.example.geneticscalculator.data.models.LoginUser;
+import com.example.geneticscalculator.data.session.AppSession;
 import com.example.geneticscalculator.databinding.FragmentSignupBinding;
 import com.example.geneticscalculator.ui.stateholder.viewModels.HomeViewModel;
 
@@ -27,6 +29,11 @@ public class SignUpFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding.signUpButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                String phone = binding.editTextPhone.getText().toString();
+                String password = binding.editTextTextPassword.getText().toString();
+                LoginUser user = new LoginUser(phone, password);
+                AppSession.setSessionUser(user);
+
                 Toast.makeText(getContext(), "Вы успешно зарегистрировались!", Toast.LENGTH_LONG).show();
                 Navigation.findNavController(view).navigate(R.id.action_signup_to_auth);
             }
